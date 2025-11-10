@@ -152,8 +152,10 @@ function createMapC(geojson, giniData, tooltip, path) {
 
     // Color scale
     const colorScaleGini = d3.scaleSequential()
-        .domain(d3.extent(Array.from(latestGini.values())))
-        .interpolator(d3.interpolatePlasma);
+    .domain(d3.extent(Array.from(latestGini.values())))
+    .interpolator(d3.interpolateRgbBasis([
+        "#fde0dd", "#fa9fb5", "#f768a1", "#dd3497", "#ae017e", "#7a0177", "#49006a"
+    ]));
 
     // Draw counties
     svgC.selectAll("path")
