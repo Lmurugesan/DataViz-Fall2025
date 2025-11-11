@@ -1,2 +1,0 @@
-Data source:
-https://www.mass.gov/info-details/precipitation-data
