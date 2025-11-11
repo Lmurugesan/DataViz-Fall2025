@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author Network Force Layout</title>
+    <!-- D3.js library -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            width: 95%;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        #controls {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #controls label {
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        input[type="range"] {
+            width: 150px;
+            vertical-align: middle;
+        }
+
+        .tooltip {
+            position: absolute;
+            background: #fff;
+            padding: 8px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            pointer-events: none;
+            opacity: 0;
+            font-size: 14px;
+        }
+
+        svg {
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Author Network Visualization</h2>
+
+        <!-- Sliders for force parameters -->
+        <div id="controls">
+            <label>Charge Strength:
+                <input type="range" id="chargeSlider" min="-200" max="0" value="-50">
+            </label>
+            <label>Collision Radius Factor:
+                <input type="range" id="collisionSlider" min="1" max="20" value="10">
+            </label>
+            <label>Link Strength:
+                <input type="range" id="linkSlider" min="0" max="1" step="0.1" value="0.5">
+            </label>
+        </div>
+
+        <!-- SVG for D3.js visualization -->
+        <svg width="1900" height="1500"></svg>
+
+        <!-- Tooltip -->
+        <div id="tooltip" class="tooltip"></div>
+    </div>
+
+    <!-- D3.js script -->
+    <script src="script.js"></script>
+</body>
+</html>
